@@ -1,0 +1,60 @@
+﻿<Window x:Class="FinalProjectWPF.FifteenPuzzle.FifteenPuzzleGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProjectWPF.FifteenPuzzle"
+        mc:Ignorable="d"
+        Title="Fifteen Puzzle Game" Height="500" Width="800" WindowStartupLocation="CenterScreen" KeyDown="DockPanel_KeyDown" Icon="FifteenPuzzleAssets\iconFifteenPuzzle.ico">
+    <DockPanel>
+        <DockPanel LastChildFill="True">
+            <Grid x:Name="Menu" DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="Auto" MinWidth="290" />
+                    <ColumnDefinition Width="Auto" MinWidth="10" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Name="MenuStartGame" Content="Start new game" FontSize="16" Click="MenuStartGame_Click" Background="#FF6299EE">
+                </Button>
+                <Button Name="MenuCancelMyTurn" Grid.Column="1" Content="Cancel my turn" FontSize="16" Visibility="Collapsed" Click="CancelMyTurn_Click" Background="#FF6299EE">
+                </Button>
+                <Label Grid.Column="2" x:Name="labelTime" HorizontalContentAlignment="Center" Content="Timer: " />
+                <Label Grid.Column="3" x:Name="labelScore" HorizontalContentAlignment="Center" Content="Steps: "/>
+            </Grid>
+            <UniformGrid Name="uniformGrid" DockPanel.Dock="Bottom" Rows="4" Columns="4" Margin="2,2,2,2">
+                <Button Name="button0" Tag="0"/>
+                <Button Name="button1" Tag="1"/>
+                <Button Name="button2" Tag="2"/>
+                <Button Name="button3" Tag="3"/>
+                <Button Name="button4" Tag="4"/>
+                <Button Name="button5" Tag="5"/>
+                <Button Name="button6" Tag="6"/>
+                <Button Name="button7" Tag="7"/>
+                <Button Name="button8" Tag="8"/>
+                <Button Name="button9" Tag="9"/>
+                <Button Name="button10" Tag="10"/>
+                <Button Name="button11" Tag="11"/>
+                <Button Name="button12" Tag="12"/>
+                <Button Name="button13" Tag="13"/>
+                <Button Name="button14" Tag="14"/>
+                <Button Name="button15" Tag="15"/>
+                <UniformGrid.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Focusable" Value="False"/>
+                        <EventSetter Event="Click" Handler="Button_Click"/>
+                        <Setter Property="Content" Value="*"/>
+                        <Setter Property="FontSize" Value="38"/>
+                        <Setter Property="Margin" Value="2,2,2,2"/>
+                        <Setter Property="FontWeight" Value="Black"/>
+                        <Setter Property="Background" Value="#FF6200EE"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                    </Style>
+                </UniformGrid.Resources>
+            </UniformGrid>
+        </DockPanel>
+    </DockPanel>
+</Window>

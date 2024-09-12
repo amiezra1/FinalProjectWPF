@@ -1,0 +1,62 @@
+﻿<Window x:Class="FinalProjectWPF.Painter.PainterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:FinalProjectWPF.Painter"
+        mc:Ignorable="d"
+        Title="Painter" Height="550" Width="900" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="PainterAssets\PainterIcon.jpg">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="575"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Margin="20,20,0,20" BorderThickness="0,0,2,0" BorderBrush="DodgerBlue" Grid.Column="0">
+            <Grid Margin="20,20,40,20">
+                <Grid.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="15" Opacity="0.15" ShadowDepth="2"/>
+                </Grid.Effect>
+                <InkCanvas x:Name="Canvas" Background="White"/>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center">
+            <Label Content="Editing mode" FontWeight="SemiBold" FontSize="16"/>
+            <StackPanel Orientation="Horizontal" Margin="5,10,0,0">
+                <ToggleButton Name="SelectBtn" Padding="5" Margin="0,0,10,0" ToolTip="Select" Background="White" Click="SelectBtn_Click">
+                    <Image Height="24" Width="24" Source="https://img.icons8.com/fluency/48/cursor--v1.png"/>
+                </ToggleButton>
+                <ToggleButton Name="PenBtn" Padding="5" Margin="0,0,10,0" ToolTip="Pen" Background="White" IsChecked="True" Click="PenBtn_Click">
+                    <Image Height="24" Width="24" Source="https://img.icons8.com/fluency/48/pen-1.png"/>
+                </ToggleButton>
+                <ToggleButton Name="HighlighterBtn" Padding="5" Margin="0,0,10,0" ToolTip="Highlighter" Background="White" Click="HighlighterBtn_Click">
+                    <Image Height="24" Width="24" Source="https://img.icons8.com/fluency/48/border-color.png"/>
+                </ToggleButton>
+                <ToggleButton Name="EraserBtn" Padding="5" Margin="0,0,10,0" ToolTip="Eraser" Background="White" Click="EraserBtn_Click">
+                    <Image Height="24" Width="24" Source="https://img.icons8.com/fluency/48/erase.png"/>
+                </ToggleButton>
+            </StackPanel>
+            <Label Content="Pen colour" FontWeight="SemiBold" FontSize="16" Margin="0,25,0,0"/>
+            <xctk:ColorPicker x:Name="PenColorPicker" SelectedColorChanged="PenColorPicker_SelectedColorChanged" ShowStandardColors="False" UsingAlphaChannel="False" SelectedColor="Black" Margin="5,10,0,0" Height="30" ColorMode="ColorCanvas" DisplayColorAndName="True" Width="200" HorizontalAlignment="Left" FontSize="14"/>
+            <Label Content="Pen thickness" FontWeight="SemiBold" FontSize="16" Margin="0,25,0,0"/>
+            <Slider x:Name="ThicknessSlider" ValueChanged="ThicknessSlider_ValueChanged" Margin="5,10,0,0" IsSnapToTickEnabled="True" Minimum="1" Maximum="7" Value="2"/>
+            <Label Content="Highlighter colour" FontWeight="SemiBold" FontSize="16" Margin="0,25,0,0"/>
+            <StackPanel Orientation="Horizontal" Margin="5,10,0,0">
+                <RadioButton Name="YellowRadio" Click="YellowRadio_Click" GroupName="HighlighterRadios" Margin="0,0,15,0" IsChecked="True" VerticalContentAlignment="Center">
+                    <Rectangle Fill="Yellow" Height="20" Width="50" Stroke="Gray"/>
+                </RadioButton>
+                <RadioButton Name="CyanRadio" Click="CyanRadio_Click" GroupName="HighlighterRadios" Margin="0,0,15,0" VerticalContentAlignment="Center">
+                    <Rectangle Fill="Cyan" Height="20" Width="50" Stroke="Gray"/>
+                </RadioButton>
+                <RadioButton Name="MagentaRadio" Click="MagentaRadio_Click" GroupName="HighlighterRadios" VerticalContentAlignment="Center">
+                    <Rectangle Fill="Magenta" Height="20" Width="50" Stroke="Gray"/>
+                </RadioButton>
+            </StackPanel>
+            <Label Content="Eraser type" FontWeight="SemiBold" FontSize="16" Margin="0,25,0,0"/>
+            <StackPanel Orientation="Horizontal" Margin="5,10,0,5">
+                <RadioButton Name="PartialStrokeRadio" Click="PartialStrokeRadio_Click" Content="Partial stroke" GroupName="EraserTypeRadios" Margin="0,0,25,0" IsChecked="True" FontSize="14" VerticalContentAlignment="Center"/>
+                <RadioButton Name="FullStrokeRadio" Click="FullStrokeRadio_Click" Content="Full stroke" GroupName="EraserTypeRadios" FontSize="14" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,136 @@
+﻿<Window x:Class="FinalProjectWPF.InventorySystem.InventorySystemApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProjectWPF.InventorySystem"
+        mc:Ignorable="d"
+        Title="Inventory System" Height="450" Width="500" WindowStartupLocation="CenterScreen"
+        Icon="InventorSystemAssets\InventorSystemIcon.jpeg"
+        Background="#F0F0F0">
+
+    <Window.Resources>
+        <!-- סגנון כפתור מותאם עם פינות מעוגלות -->
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="#007ACC" 
+                                CornerRadius="10" 
+                                BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- סגנון לתיבת טקסט -->
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5,0,5,10"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <!-- סגנון ל-DataGrid -->
+        <Style TargetType="DataGrid">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="RowBackground" Value="#F9F9F9"/>
+            <Setter Property="AlternatingRowBackground" Value="#E9E9E9"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#305496" Offset="0"/>
+                <GradientStop Color="#D9E1F2" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- כפתורים בסטייל מודרני -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+            <Button Content="Add" Command="{Binding AddCommand}" Width="100" Cursor="Hand"/>
+            <Button Content="Delete" Command="{Binding DeleteCommand}" Width="100" Cursor="Hand"/>
+            <Button Content="Save" Command="{Binding SaveCommand}" Width="100" Cursor="Hand"/>
+        </StackPanel>
+
+        <!-- תוכן הדאטה ועריכת פרטים -->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid 
+    ItemsSource="{Binding Items}"
+    SelectedItem="{Binding SelectedItem}"
+    CanUserAddRows="False"
+    CanUserDeleteRows="False"
+    AutoGenerateColumns="True"
+    Grid.Column="0"
+    Background="#F3F4F6"
+    GridLinesVisibility="None"
+    RowBackground="#FFFFFF"
+    AlternatingRowBackground="#E0E7FF"
+    BorderBrush="#CCCCCC"
+    BorderThickness="1"
+    SelectionMode="Single"
+    HorizontalGridLinesBrush="Transparent"
+    VerticalGridLinesBrush="Transparent">
+
+                <!-- עיצוב כותרות עמודות ישירות בתוך DataGrid -->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#007ACC"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                        <Setter Property="BorderBrush" Value="#CCCCCC"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <!-- עיצוב שורת בחירה -->
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="#FFFFFF"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#007ACC"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+
+            </DataGrid>
+
+
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Top">
+                <Label Content="Name" FontWeight="Bold" />
+                <TextBox Text="{Binding SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Serial Number" FontWeight="Bold" />
+                <TextBox Text="{Binding SelectedItem.SerialNumber, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Quantity" FontWeight="Bold"/>
+                <TextBox Text="{Binding SelectedItem.Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Comments" FontWeight="Bold"/>
+                <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="100" VerticalScrollBarVisibility="Auto" Text="{Binding SelectedItem.Comments, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,133 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\ALogo.png" />
+    <None Remove="Assets\ChessImg.jpeg" />
+    <None Remove="Assets\CountriesProjectImg.jpeg" />
+    <None Remove="Assets\FifteenPuzzleGameImg.jpeg" />
+    <None Remove="Assets\InventorySystemImg.jpeg" />
+    <None Remove="Assets\logo.png" />
+    <None Remove="Assets\PacManImg.jpeg" />
+    <None Remove="Assets\PainterImg.jpeg" />
+    <None Remove="Assets\SnakeImg.jpeg" />
+    <None Remove="Assets\TetrisImg.jpeg" />
+    <None Remove="Assets\TicTacToeImg.jpeg" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\BishopB.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\BishopW.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\Board.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\CursorB.cur" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\CursorW.cur" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\icon.ico" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\KingB.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\KingW.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\KnightB.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\KnightW.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\PawnB.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\PawnW.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\QueenB.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\QueenW.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\RookB.png" />
+    <None Remove="Projects\Chess\ChessUI\ChessAssets\RookW.png" />
+    <None Remove="Projects\CountriesProject\CountriesAssets\CountriesIcon.jpg" />
+    <None Remove="Projects\FifteenPuzzleGame\FifteenPuzzleAssets\iconFifteenPuzzle.ico" />
+    <None Remove="Projects\Inventory System\InventorSystemAssets\InventorSystemIcon.jpeg" />
+    <None Remove="Projects\PAC_ManGame\PacManAssets\icon-pac-man.ico" />
+    <None Remove="Projects\PAC_ManGame\PacManAssets\orange.jpg" />
+    <None Remove="Projects\PAC_ManGame\PacManAssets\pacman.jpg" />
+    <None Remove="Projects\PAC_ManGame\PacManAssets\pink.jpg" />
+    <None Remove="Projects\PAC_ManGame\PacManAssets\red.jpg" />
+    <None Remove="Projects\Painter\PainterAssets\PainterIcon.jpg" />
+    <None Remove="Projects\SnakeGame\SnakeAssets\SnakeIcon.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Background.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Block-Empty.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Block-I.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Block-J.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Block-L.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Block-O.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Block-S.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Block-T.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\Block-Z.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TetrisIcon.ico" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TileBlue.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TileCyan.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TileEmpty.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TileGreen.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TileOrange.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TilePurple.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TileRed.png" />
+    <None Remove="Projects\TetrisGame\TetrisAssets\TileYellow.png" />
+    <None Remove="Projects\TicTacToe\TicTacToeAssets\TicTacToeIcon.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\ALogo.png" />
+    <Resource Include="Assets\ChessImg.jpeg" />
+    <Resource Include="Assets\CountriesProjectImg.jpeg" />
+    <Resource Include="Assets\FifteenPuzzleGameImg.jpeg" />
+    <Resource Include="Assets\InventorySystemImg.jpeg" />
+    <Resource Include="Assets\logo.png" />
+    <Resource Include="Assets\PacManImg.jpeg" />
+    <Resource Include="Assets\PainterImg.jpeg" />
+    <Resource Include="Assets\SnakeImg.jpeg" />
+    <Resource Include="Assets\TetrisImg.jpeg" />
+    <Resource Include="Assets\TicTacToeImg.jpeg" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\BishopB.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\BishopW.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\Board.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\CursorB.cur" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\CursorW.cur" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\icon.ico" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\KingB.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\KingW.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\KnightB.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\KnightW.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\PawnB.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\PawnW.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\QueenB.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\QueenW.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\RookB.png" />
+    <Resource Include="Projects\Chess\ChessUI\ChessAssets\RookW.png" />
+    <Resource Include="Projects\CountriesProject\CountriesAssets\CountriesIcon.jpg" />
+    <Resource Include="Projects\FifteenPuzzleGame\FifteenPuzzleAssets\iconFifteenPuzzle.ico" />
+    <Resource Include="Projects\Inventory System\InventorSystemAssets\InventorSystemIcon.jpeg" />
+    <Resource Include="Projects\PAC_ManGame\PacManAssets\icon-pac-man.ico" />
+    <Resource Include="Projects\PAC_ManGame\PacManAssets\orange.jpg" />
+    <Resource Include="Projects\PAC_ManGame\PacManAssets\pacman.jpg" />
+    <Resource Include="Projects\PAC_ManGame\PacManAssets\pink.jpg" />
+    <Resource Include="Projects\PAC_ManGame\PacManAssets\red.jpg" />
+    <Resource Include="Projects\Painter\PainterAssets\PainterIcon.jpg" />
+    <Resource Include="Projects\SnakeGame\SnakeAssets\SnakeIcon.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Background.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Block-Empty.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Block-I.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Block-J.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Block-L.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Block-O.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Block-S.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Block-T.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\Block-Z.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TetrisIcon.ico" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TileBlue.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TileCyan.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TileEmpty.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TileGreen.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TileOrange.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TilePurple.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TileRed.png" />
+    <Resource Include="Projects\TetrisGame\TetrisAssets\TileYellow.png" />
+    <Resource Include="Projects\TicTacToe\TicTacToeAssets\TicTacToeIcon.jpg" />
+  </ItemGroup>
+
+</Project>

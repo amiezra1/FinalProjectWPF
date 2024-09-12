@@ -1,0 +1,116 @@
+﻿<Page x:Class="FinalProjectWPF.PresentationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalProjectWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#305496" Offset="0"/>
+                <GradientStop Color="#D9E1F2" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="10*"  />
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="136*" />
+            <RowDefinition Height="136*" />
+            <RowDefinition Height="45*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="3" Background="#203764" Grid.RowSpan="2">
+            <Grid >
+                <Image
+                    x:Name="UserAvatar"
+                    Source="/Assets/logo.png"
+                    Width="50"
+                    Height="50"
+                    MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"
+                    HorizontalAlignment="Left"
+                    Margin="10,0,210,0"
+                    MouseLeftButtonUp="UserAvatar_MouseLeftButtonUp"
+                    Cursor="Hand"/>
+            </Grid>
+            <Grid>
+                <Label x:Name="TitleLabel"
+                        Content="Game Center" 
+                        FontSize="30"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Margin="0,0,120,0"
+                        FontWeight="Bold"
+                        Foreground="White"/>
+            </Grid>
+        </Grid>
+        <Viewbox Grid.Row="2" Grid.RowSpan="2" Grid.Column="1">
+            <Viewbox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.43"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.777"/>
+                </TransformGroup>
+            </Viewbox.RenderTransform>
+            <WrapPanel Grid.Row="1" Grid.RowSpan="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Border  BorderThickness="2" CornerRadius="30" Width="250" Height="250" Margin="50,0,20,0">
+                    <Image x:Name="ProjectImage"
+                     Margin="15"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                 MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"
+               />
+                </Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="*"  />
+                        <RowDefinition Height="0.8*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.Row="0"
+        x:Name="DescriptionTitle"
+        Text="About The Project"
+        MinHeight="40"
+        FontSize="18"
+        FontWeight="ExtraBold"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        FontFamily="Arial Black"
+
+    />
+                    <TextBlock Grid.Row="1"
+                        x:Name="ProjectText"
+                        Width="650"
+                        MinHeight="270"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        TextWrapping="Wrap"
+                        Foreground="Black"
+                        Margin="0,35,0,0"/>
+                    <Grid Grid.Row="2" Height="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="GoBack" Grid.Column="0" Width="150" Content="GoBack" Foreground="White" Background="DarkBlue" HorizontalAlignment="Left" Margin="20" Cursor="Hand" Click="GoBack_Click"/>
+                        <Button x:Name="OpenProject" Grid.Column="1" Width="150"  Content="Open Project" Foreground="White" Background="DarkBlue" HorizontalAlignment="Right" Margin="20"  Cursor="Hand" Click="OpenProject_Click"/>
+                    </Grid>
+                </Grid>
+            </WrapPanel>
+        </Viewbox>
+
+    </Grid>
+</Page>
